@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <h1>Is my App viable?</h1>
-    <IdeaForm v-if="this.stage === 1" :advanceStage="advanceStage" />
+    <IdeaForm
+      v-if="this.stage === 1"
+      :advanceStage="advanceStage"
+      :updateAppIdea="updateAppIdea"
+    />
     <DataProcessing
       v-if="this.stage === 2"
       :advanceStage="advanceStage"
@@ -9,6 +13,7 @@
     <Results
       v-if="this.stage === 3"
       :resetStage="resetStage"
+      :app_idea="app_idea"
     />
   </div>
 </template>
@@ -29,6 +34,7 @@ export default {
   },
   data() {
     return {
+      app_idea: '',
       stage: 1
     }
   },
@@ -38,6 +44,9 @@ export default {
     },
     resetStage() {
       this.stage = 1;
+    },
+    updateAppIdea(e) {
+      this.app_idea = e.target.value;
     }
   }
 }
