@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Is my App viable?</h1>
-    <Form />
+    <IdeaForm />
   </div>
 </template>
 
