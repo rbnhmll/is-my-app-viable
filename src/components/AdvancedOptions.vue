@@ -12,10 +12,6 @@
         <label for="">{{check}}</label>
         <input type="checkbox" name="" id="">
       </span>
-      
-      <div class="input_group">
-        <input type="submit" value="Submit">
-      </div>
     </div>
   </section>
 </template>
