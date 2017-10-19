@@ -18,17 +18,15 @@
         v-for="(check, i) in checkboxes"
         v-bind:key="i"
       >
-        <label for="">{{check}}</label>
-        <input type="checkbox" name="" id="">
+        <label :for="friendly(check)">{{check}}</label>
+        <input type="checkbox" :name="friendly(check)" :id="friendly(check)">
       </span>
     </div>
   </section>
 </template>
 
 <script>
-import friendly from "friendly-url";
-console.log(friendly("testing this thing"));
-
+import friendly_url from "friendly-url";
 
 export default {
   name: 'AdvancedOptions',
@@ -49,6 +47,9 @@ export default {
       ],
       show_advanced: false
     }
+  },
+  methods: {
+    friendly: friendly_url
   }
 }
 </script>
