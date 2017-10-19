@@ -1,14 +1,23 @@
 <template>
   <section class="advanced_options">
     <div class="input_group">
-      <label for="advanced_options">Advanced Options</label>
-      <input type="checkbox" name="advanced_options" id="advanced_options">
+      <label for="advanced_options">Show Advanced Options</label>
+      <input
+        type="checkbox"
+        name="advanced_options"
+        id="advanced_options"
+        v-model="show_advanced"
+      >
     </div>
 
-    <div class="">
+    <div class="advanced_options__inputs" v-show="show_advanced">
       <h2>Check all that apply</h2>
 
-      <span class="input_group" v-for="check in checkboxes">
+      <span
+        class="input_group"
+        v-for="(check, i) in checkboxes"
+        v-bind:key="i"
+      >
         <label for="">{{check}}</label>
         <input type="checkbox" name="" id="">
       </span>
@@ -37,7 +46,8 @@ export default {
         "Seed Capital",
         "IPO",
         "Gamification"
-      ]
+      ],
+      show_advanced: false
     }
   }
 }
