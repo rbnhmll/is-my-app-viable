@@ -2,8 +2,14 @@
   <div id="app">
     <h1>Is my App viable?</h1>
     <IdeaForm v-if="this.stage === 1" :advanceStage="advanceStage" />
-    <DataProcessing v-if="this.stage === 2" />
-    <Results v-if="this.stage === 3" />
+    <DataProcessing
+      v-if="this.stage === 2"
+      :advanceStage="advanceStage"
+    />
+    <Results
+      v-if="this.stage === 3"
+      :resetStage="resetStage"
+    />
   </div>
 </template>
 
@@ -29,6 +35,9 @@ export default {
   methods: {
     advanceStage() {
       this.stage = this.stage + 1;
+    },
+    resetStage() {
+      this.stage = 1;
     }
   }
 }
