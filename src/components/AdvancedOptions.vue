@@ -8,32 +8,11 @@
     <div class="">
       <h2>Check all that apply</h2>
 
-      <label for="">Totally new idea!</label>
-      <input type="checkbox" name="" id="">
-
-      <label for="">Like Uber but _____</label>
-      <input type="checkbox" name="" id="">
-
-      <label for="">Disruptive</label>
-      <input type="checkbox" name="" id="">
-
-      <label for="">Profits over people</label>
-      <input type="checkbox" name="" id="">
-
-      <label for="">VC Approved</label>
-      <input type="checkbox" name="" id="">
-
-      <label for="">Zero capital</label>
-      <input type="checkbox" name="" id="">
-
-      <label for="">Came to you in a dream</label>
-      <input type="checkbox" name="" id="">
+      <span class="input_group" v-for="check in checkboxes">
+        <label for="">{{check}}</label>
+        <input type="checkbox" name="" id="">
+      </span>
       
-      <label for="">Sound investment</label>
-      <input type="checkbox" name="" id="">
-
-      <label for="">Easy to develope</label>
-      <input type="checkbox" name="" id="">
       <div class="input_group">
         <input type="submit" value="Submit">
       </div>
@@ -43,13 +22,25 @@
 
 <script>
 import friendly from "friendly-url";
+console.log(friendly("testing this thing"));
+
 
 export default {
   name: 'AdvancedOptions',
   data () {
     return {
       checkboxes: [
-        "VC approved"
+        "Totally new idea!",
+        "Like Uber but _____",
+        "VC approved",
+        "Disruptive",
+        "Growth-hacking",
+        "VC Approved",
+        "MVP",
+        "Scalable",
+        "Seed Capital",
+        "IPO",
+        "Gamification"
       ]
     }
   }
