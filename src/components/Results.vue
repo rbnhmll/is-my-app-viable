@@ -2,7 +2,7 @@
   <section class="results">
     <p>"{{app_idea}}"</p>
     <h2>{{ result }}</h2>
-    <button @click="resetStage">{{ reset }}</button>
+    <button @click="reset">{{ resetButton }}</button>
   </section>
 </template>
 
@@ -11,8 +11,9 @@ import { randomNum } from '../helpers';
 export default {
   name: 'Results',
   props: [
-    "resetStage",
-    "app_idea"
+    "reset",
+    "app_idea",
+    "resetAppIdea"
   ],
   data () {
     return {
@@ -35,7 +36,8 @@ export default {
         'Try another dumb idea',
         'Roll the dice again',
         'I can do better...',
-        'Second morgage, here we come'
+        'Second morgage, here we come',
+        'I watch Dragon\'s Den',
       ]
     }
   },
@@ -45,7 +47,7 @@ export default {
     result() {
       return this.results[randomNum(this.results.length)];
     },
-    reset() {
+    resetButton() {
       return this.reset_message[randomNum(this.reset_message.length)];
     }
   }
