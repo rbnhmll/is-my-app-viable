@@ -4,7 +4,7 @@
     <IdeaForm
       v-if="this.stage === 1"
       :advanceStage="advanceStage"
-      :updateAppIdea="updateAppIdea"
+      :handleChange="handleChange"
     />
     <DataProcessing
       v-if="this.stage === 2"
@@ -34,7 +34,10 @@ export default {
   },
   data() {
     return {
-      app_idea: '',
+      app_idea: {
+        description: "",
+        options: []
+      },
       stage: 1
     }
   },
@@ -46,11 +49,15 @@ export default {
       this.stage = 1;
       this.app_idea = '';
     },
+    handleChange(e) {
+      if (e.target) {
+        this.app_idea[e.target.name] = e.target.value;
+      } else {
+        this.app_idea.options = e;        
+      }
+    },
     resetAppIdea() {
     },
-    updateAppIdea(e) {
-      this.app_idea = e.target.value;
-    }
   }
 }
 </script>

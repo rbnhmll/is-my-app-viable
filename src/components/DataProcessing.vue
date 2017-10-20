@@ -59,8 +59,6 @@ export default {
   height: 150px;
   overflow-y: scroll;
   position: relative;
-  /* background: #2c3e50; */
-  /* color: #85981C; */
   border: 1px solid lightgrey;
   padding: 20px;
 }

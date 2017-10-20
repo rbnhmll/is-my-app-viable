@@ -1,9 +1,9 @@
 <template>
   <form @submit.prevent="submitForm">
     <label for="app_idea">App idea</label>
-    <input class="app_idea" type="text" name="app_idea" id="app_idea" @change="updateAppIdea" required>
+    <input class="app_idea" type="text" name="description" id="app_idea" @change="handleChange" required>
     
-    <AdvancedOptions />
+    <AdvancedOptions :handleChange="handleChange" />
 
     <div class="input_group">
         <input type="submit" value="Submit">
@@ -22,7 +22,7 @@ export default {
   },
   props: [
     "advanceStage",
-    "updateAppIdea"
+    "handleChange"
   ],
   data () {
     return {

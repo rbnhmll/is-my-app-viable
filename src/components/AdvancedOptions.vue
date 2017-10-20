@@ -20,8 +20,10 @@
         <input
           class="advanced_options__checkbox"
           type="checkbox"
-          :name="friendly(check)"
+          name="options"
           :id="friendly(check)"
+          :value="check"
+          v-model="selected_options"
         >
         <label
           class="advanced_options__label"
@@ -37,6 +39,9 @@ import friendly_url from "friendly-url";
 
 export default {
   name: 'AdvancedOptions',
+  props: [
+    "handleChange"
+  ],
   data () {
     return {
       checkboxes: [
@@ -53,11 +58,17 @@ export default {
         "Sharing Economy",
         "The Cloud"
       ],
+      selected_options: [],
       show_advanced: false
     }
   },
   methods: {
     friendly: friendly_url
+  },
+  watch: {
+    selected_options() {
+      this.handleChange(this.selected_options);
+    }
   }
 }
 </script>
