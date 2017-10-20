@@ -1,6 +1,7 @@
 <template>
   <section class="results">
-    <p>"{{app_idea}}"</p>
+    <p>Big idea: "{{ app_idea.description }}"</p>
+      <p v-if="app_idea.options.lenght > 0">Keywords: {{ app_idea.options.join(', ') }}</p>
     <h2>{{ result }}</h2>
     <button @click="reset">{{ resetButton }}</button>
   </section>
@@ -8,7 +9,7 @@
 
 <script>
 import { randomNum } from '../helpers';
-import { results, reset_message } from '../messages';
+import { results, reset_message } from '../list_data';
 export default {
   name: 'Results',
   props: [

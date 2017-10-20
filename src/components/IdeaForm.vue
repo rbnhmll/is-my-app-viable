@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import AdvancedOptions from "./AdvancedOptions"
 import friendly from "friendly-url";
+import AdvancedOptions from "./AdvancedOptions"
 
 export default {
   name: 'IdeaForm',

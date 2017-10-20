@@ -1,7 +1,7 @@
 <template>
   <section class="data_processing">
-    <h4><i class="fa fa-spinner fa-pulse fa-fw" aria-hidden="true"></i>
-    Calculating ...</h4>
+    <p class="data_processing__calc"><i class="fa fa-spinner fa-pulse fa-fw" aria-hidden="true"></i>
+    Calculating ...</p>
     <ul class="data_processing__window">
       <li v-for="(r, i) in response" :key="i">> {{ r }}</li>
     </ul>
@@ -10,7 +10,7 @@
 
 <script>
 import { randomNum } from '../helpers';
-import { data_messages } from '../messages';
+import { data_messages } from '../list_data';
 let interval;
 
 export default {
@@ -63,7 +63,7 @@ export default {
   padding: 20px;
 }
 
-.data_processing h4 {
+.data_processing__calc {
   position: absolute;
   right: 10px;
   top: -10px;
