@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
 import IdeaForm from './components/IdeaForm';
 import DataProcessing from './components/DataProcessing';
 import Results from './components/Results';
@@ -27,7 +26,6 @@ import Results from './components/Results';
 export default {
   name: 'app',
   components: {
-    HelloWorld,
     IdeaForm,
     DataProcessing,
     Results
@@ -47,7 +45,8 @@ export default {
     },
     reset() {
       this.stage = 1;
-      this.app_idea = '';
+      this.app_idea.description = '';
+      this.app_idea.options = [];
     },
     handleChange(e) {
       if (e.target) {
