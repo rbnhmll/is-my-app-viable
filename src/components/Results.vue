@@ -26,7 +26,7 @@ export default {
         'That is a dumb app',
         'It\'s been done before, but better',
         'Stop before you break something',
-        'No! This is why people hate millenials',
+        'No! This is why people hate millennials',
         'No! Bad! Stop!',
         'So much self confidence, so little insight',
         'Hard pass!'
@@ -36,7 +36,7 @@ export default {
         'Try another dumb idea',
         'Roll the dice again',
         'I can do better...',
-        'Second morgage, here we come',
+        'Second mortgage, here we come',
         'I watch Dragon\'s Den',
       ]
     }

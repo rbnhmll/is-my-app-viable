@@ -71,10 +71,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 }
 
 .wrapper {
-  max-width: 700px;
-  width: 100%;
+  max-width: 800px;
+  width: 95%;
   margin: 0 auto;
-  padding: 5%;
+  /* padding: 0 5%; */
 }
 
 button,
