@@ -8,6 +8,7 @@
 
 <script>
 import { randomNum } from '../helpers';
+import { results, reset_message } from '../messages';
 export default {
   name: 'Results',
   props: [
@@ -17,28 +18,8 @@ export default {
   ],
   data () {
     return {
-      results: [
-        'No! Just stop',
-        'This would not make the world a better place',
-        'Not a good idea',
-        'Terrible, don\'t even',
-        'This is a very stupid idea',
-        'That is a dumb app',
-        'It\'s been done before, but better',
-        'Stop before you break something',
-        'No! This is why people hate millennials',
-        'No! Bad! Stop!',
-        'So much self confidence, so little insight',
-        'Hard pass!'
-      ],
-      reset_message: [
-        'Waste more VC money',
-        'Try another dumb idea',
-        'Roll the dice again',
-        'I can do better...',
-        'Second mortgage, here we come',
-        'I watch Dragon\'s Den',
-      ]
+      results,
+      reset_message
     }
   },
   methods: {
