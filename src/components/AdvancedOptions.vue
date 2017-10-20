@@ -36,6 +36,7 @@
 
 <script>
 import friendly_url from "friendly-url";
+import { checkboxes } from "../list_data";
 
 export default {
   name: 'AdvancedOptions',
@@ -44,20 +45,7 @@ export default {
   ],
   data () {
     return {
-      checkboxes: [
-        "Totally new idea!",
-        "Like Uber but _____",
-        "Disruptive",
-        "Growth-hacking",
-        "VC Approved",
-        "MVP",
-        "Scalable",
-        "Seed Capital",
-        "Gamification",
-        "IPO",
-        "Sharing Economy",
-        "The Cloud"
-      ],
+      checkboxes,
       selected_options: [],
       show_advanced: false
     }
