@@ -1,7 +1,7 @@
 <template>
   <section class="results">
     <p>Big idea: "{{ app_idea.description }}"</p>
-      <p v-if="app_idea.options.lenght > 0">Keywords: {{ app_idea.options.join(', ') }}</p>
+      <p v-if="app_idea.options.length">Keywords: {{ app_idea.options.join(', ') }}</p>
     <h2>{{ result }}</h2>
     <button @click="reset">{{ resetButton }}</button>
   </section>
