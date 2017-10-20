@@ -1,9 +1,9 @@
 <template>
   <section class="data_processing">
-    <!-- <h4><i class="fa fa-spinner fa-pulse fa-fw" aria-hidden="true"></i>
-    {{response}} ...</h4> -->
+    <h4><i class="fa fa-spinner fa-pulse fa-fw" aria-hidden="true"></i>
+    Calculating ...</h4>
     <ul class="data_processing__window">
-      <li v-for="(r, i) in response" :key="i">{{ r }}</li>
+      <li v-for="(r, i) in response" :key="i">> {{ r }}</li>
     </ul>
   </section>
 </template>
@@ -32,7 +32,7 @@ export default {
         this.updateScroll();
       }, 250);
     },
-    updateScroll() {    
+    updateScroll() {   
       var element = document.querySelector(".data_processing__window");
       var isScrolledToBottom = element.scrollHeight - element.clientHeight <= element.scrollTop + 1;
       if(isScrolledToBottom) {
@@ -55,16 +55,28 @@ export default {
 <style scoped>
 .data_processing {
   font-family: 'Inconsolata', monospace;
-  padding: 0;
-  margin: 0;
-  height: 100px;
+  margin: 0 auto;
+  height: 150px;
   overflow-y: scroll;
   position: relative;
+  /* background: #2c3e50; */
+  /* color: #85981C; */
+  border: 1px solid lightgrey;
+  padding: 20px;
+}
+
+.data_processing h4 {
+  position: absolute;
+  right: 10px;
+  top: -10px;
 }
 
 .data_processing__window {
+  padding: 0;
+  margin: 0;
   position: absolute;
-  bottom: 0
+  bottom: 0;
+  text-align: left;
 }
 
 .data_processing li {
