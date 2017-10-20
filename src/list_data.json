@@ -1,4 +1,18 @@
 {
+    "checkboxes": [
+        "Scrappy Startup",
+        "Totally new idea!",
+        "Like Uber but _____",
+        "Disruptive",
+        "Growth-hacking",
+        "VC Approved",
+        "Solid MVP",
+        "Scalable",
+        "Seed Capital",
+        "Gamification",
+        "Sharing Economy",
+        "The Cloud"
+    ],
     "data_messages": [
         "Alarmed at my own power",
         "Analyzing response",
@@ -56,15 +70,20 @@
         "Throwing submission data in garbage",
         "Trying to be more compassionate",
         "Txting w my BFF, BRB",
-        "npm install how-to-math --save"
+        "npm install how-to-math --save-dev"
     ],
     "results": [
+        "Betting on horses would be an easier win",
         "Hard pass!",
+        "It really starts to look dumb when in writing",
         "It's been done before, but better",
+        "Looked better on the napkin?",
         "No! Bad! Stop!",
         "No! Just stop",
         "No! This is why people hate millennials",
         "Not a good idea",
+        "Not even sort-of-good",
+        "Save your money, and tell no one of this",
         "So much self confidence, so little insight",
         "Stop before you break something",
         "Terrible, don't even",
@@ -72,17 +91,20 @@
         "This is a very stupid idea",
         "This would not make the world a better place",
         "Would not touch with 10 foot pole",
-        "Save your money, and tell no one of this",
-        "Betting on horses would be an easier win"
+        "You really need to listen to yourself talk",
+        "💩 Would have been a good one 5 years ago",
+        "🙅 Better re-crunch those numbers"
     ],
     "reset_message": [
+        "C.R.E.A.M",
+        "College can wait",
         "I can do better...",
+        "I have another pitch",
         "I watch Dragon's Den",
         "Roll the dice",
         "Second mortgage, here we come",
-        "Try another dumb idea",
-        "Waste more VC money",
         "Second time's the charm",
-        "I have another pitch"
+        "Try another dumb idea",
+        "Waste more VC money"
     ]
 }
