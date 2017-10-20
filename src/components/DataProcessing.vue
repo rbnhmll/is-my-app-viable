@@ -30,7 +30,7 @@ export default {
       interval = setInterval(() => {
         this.response.push(this.data_messages[randomNum(this.data_messages.length)]);
         this.updateScroll();
-      }, 250);
+      }, 300);
     },
     updateScroll() {   
       var element = document.querySelector(".data_processing__window");
