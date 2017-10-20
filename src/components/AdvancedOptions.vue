@@ -27,7 +27,10 @@
         >
         <label
           class="advanced_options__label"
-          :for="friendly(check)">{{check}}
+          tabindex="0"
+          :for="friendly(check)"
+        >
+          {{check}}
         </label>
       </span>
     </div>
