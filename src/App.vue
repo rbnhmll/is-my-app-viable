@@ -5,6 +5,8 @@
       v-if="this.stage === 1"
       :advanceStage="advanceStage"
       :handleChange="handleChange"
+      :show_advanced="show_advanced"
+      :handleClick="handleClick"
     />
     <DataProcessing
       v-if="this.stage === 2"
@@ -32,11 +34,12 @@ export default {
   },
   data() {
     return {
+      show_advanced: false,
+      stage: 1,
       app_idea: {
         description: "",
         options: []
-      },
-      stage: 1
+      }
     }
   },
   methods: {
@@ -55,7 +58,8 @@ export default {
         this.app_idea.options = e;        
       }
     },
-    resetAppIdea() {
+    handleClick(e) {
+      this.show_advanced = e.target.checked;
     },
   }
 }

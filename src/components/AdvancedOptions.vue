@@ -1,16 +1,6 @@
 <template>
   <section class="advanced_options">
-    <div class="input_group">
-      <label for="advanced_options">Show Advanced Options</label>
-      <input
-        type="checkbox"
-        name="advanced_options"
-        id="advanced_options"
-        v-model="show_advanced"
-      >
-    </div>
-
-    <div class="advanced_options__inputs" v-show="show_advanced">
+    <div class="advanced_options__inputs">
       <h2>Check all that apply</h2>
       <span
         class="input_group"
@@ -49,8 +39,7 @@ export default {
   data () {
     return {
       checkboxes,
-      selected_options: [],
-      show_advanced: false
+      selected_options: []
     }
   },
   methods: {

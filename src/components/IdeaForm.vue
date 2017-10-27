@@ -3,10 +3,23 @@
     <label for="app_idea">App idea</label>
     <input class="app_idea" type="text" name="description" id="app_idea" @change="handleChange" required>
     
-    <AdvancedOptions :handleChange="handleChange" />
+    <div class="input_group toggle_advanced_options">
+      <label for="advanced_options">Show Advanced Options</label>
+      <input
+        type="checkbox"
+        name="advanced_options"
+        id="advanced_options"
+        @click="handleClick"
+      >
+    </div>
+
+    <AdvancedOptions
+      v-show="show_advanced"
+      :handleChange="handleChange"
+    />
 
     <div class="input_group">
-        <input type="submit" value="Submit">
+      <input type="submit" value="Submit">
     </div>
   </form>
 </template>
@@ -22,7 +35,9 @@ export default {
   },
   props: [
     "advanceStage",
-    "handleChange"
+    "handleChange",
+    "show_advanced",
+    "handleClick"
   ],
   data () {
     return {
@@ -45,6 +60,10 @@ export default {
   display: block;
   width: 100%;
   padding: 5px 15px;
+}
+
+.toggle_advanced_options {
+  margin: 25px 0;
 }
 
 </style>
