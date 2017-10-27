@@ -1,6 +1,6 @@
 # is-my-app-viable
 
-> Check if your app is a good idea
+> Check if your app is a good idea. Spoiler: It's not
 
 ## Build Setup
 
