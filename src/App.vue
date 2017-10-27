@@ -7,6 +7,7 @@
       :handleChange="handleChange"
       :show_advanced="show_advanced"
       :handleClick="handleClick"
+      :handleSubmit="handleSubmit"
     />
     <DataProcessing
       v-if="this.stage === 2"
@@ -21,6 +22,7 @@
 </template>
 
 <script>
+import firebase from './firebase';
 import IdeaForm from './components/IdeaForm';
 import DataProcessing from './components/DataProcessing';
 import Results from './components/Results';
@@ -61,6 +63,10 @@ export default {
     handleClick(e) {
       this.show_advanced = e.target.checked;
     },
+    handleSubmit(e) {
+      const itemsRef = firebase.database().ref('ideas');
+      itemsRef.push(this.app_idea);
+    }
   }
 }
 </script>

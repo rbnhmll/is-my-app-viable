@@ -37,7 +37,8 @@ export default {
     "advanceStage",
     "handleChange",
     "show_advanced",
-    "handleClick"
+    "handleClick",
+    "handleSubmit"
   ],
   data () {
     return {
@@ -48,6 +49,7 @@ export default {
   },
   methods: {
     submitForm(e) {
+      this.handleSubmit();
       this.advanceStage();
     }
   }
