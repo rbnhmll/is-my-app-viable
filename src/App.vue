@@ -75,11 +75,20 @@ export default {
 
 <style>
 @import './assets/styles/setup.scss';
+@import url('https://fonts.googleapis.com/css?family=Coda:800|Lato:300,400,700|Inconsolata');
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
