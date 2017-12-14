@@ -42,6 +42,9 @@ export default {
 </script>
 
 <style scoped>
+.options {
+  padding-left: 0;
+}
 .options__keyword {
   display: inline-block;
   list-style-type: none;

@@ -10,6 +10,7 @@
         name="advanced_options"
         id="advanced_options"
         @click="handleClick"
+        :checked="show_advanced"
       >
     </div>
 
@@ -19,7 +20,7 @@
     />
 
     <div class="input_group">
-      <input type="submit" value="Submit">
+      <input type="submit" value="Evaluate">
     </div>
   </form>
 </template>
