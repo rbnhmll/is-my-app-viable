@@ -76,7 +76,7 @@ export default {
     font-size: 2.5rem
     display: block
     width: 100%
-    padding: 10px 20px
+    padding: 20px
     border: none
     border-radius: 3px
     +transition
