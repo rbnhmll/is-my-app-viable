@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Banner />
+    <Banner :reset="this.reset" />
     <IdeaForm
       v-if="this.stage === 1"
       :advanceStage="advanceStage"
@@ -77,6 +77,7 @@ export default {
 
   @import './assets/styles/setup.scss'
   @import './assets/styles/_vars.sass'
+  @import './assets/styles/_mixins.scss'
   @import url('https://fonts.googleapis.com/css?family=Coda:800|Lato:300,400,700|Inconsolata')
 
   html
@@ -91,6 +92,11 @@ export default {
     background: linear-gradient($tropical, $midnight)
     display: flex
     color: $premidnight
+    padding: 2%
+
+  .fit
+    display: inline-block
+    white-space: nowrap
 
   #app
     text-align: center
@@ -109,13 +115,39 @@ export default {
     margin: 0 auto
     background: #fff
     padding: 5%
+  
+  .visuallyhidden
+    position: absolute
+    width: 1px
+    height: 1px
+    margin: -1px
+    border: 0
+    padding: 0
+    white-space: nowrap
+    clip-path: inset(100%)
+    clip: rect(0 0 0 0)
+    overflow: hidden
 
-  button,
-  input[type="submit"]
-    cursor: pointer
-    padding: 10px 20px
-    background: yellow
-    display: inline-block
+  input
     border: 1px solid $midgrey
+
+  button
+    cursor: pointer
+    padding: 15px 30px
+    background: transparent
+    border-radius: 3px
+    display: inline-block
+    border: none
+    font-size: 2.5rem
+    font-weight: 600
+    +transition
+    +border-gradient($btnGradStart, $btnGradEnd, 2px)
+    @media screen and (max-width: 500px)
+      padding: 10px 20px      
+    &:hover
+      +inputHover
+    span
+      +font-gradient($btnGradStart, $btnGradEnd, left)
+
 
 </style>

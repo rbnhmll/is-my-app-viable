@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="submitForm">
     <div class="input_group app_idea">
-      <input class="app_idea__input" type="text" name="description" id="app_idea" @change="handleChange" required>
+      <input class="app_idea__input" type="text" name="description" id="app_idea" @change="handleChange" required autofocus>
       <label for="app_idea" class="app_idea__label">App idea</label>
     </div>
     
@@ -22,7 +22,9 @@
     />
 
     <div class="input_group">
-      <input type="submit" value="Evaluate">
+      <button class="btn submit" role="submit">
+        <span>Evaluate</span>
+      </button>
     </div>
   </form>
 </template>
@@ -55,6 +57,9 @@ export default {
       this.handleSubmit();
       this.advanceStage();
     }
+  },
+  mounted() {
+    document.querySelector(".app_idea__input").focus();
   }
 }
 </script>
@@ -66,28 +71,42 @@ export default {
 
 .app_idea
   position: relative
+  margin-bottom: 10%
   &__input
-    font-size: 30px
+    font-size: 2.5rem
     display: block
     width: 100%
-    padding: 5px 15px
+    padding: 10px 20px
+    border: none
+    border-radius: 3px
+    +transition
+    +border-gradient($midnight, $tropical, 2px)
+
   &__label
     color: $midgrey
     position: absolute
     left: 2rem
     top: 50%
-    transition: all 0.35s ease
     transform: translateY(-50%)
-    background: #fff
+    background: rgba(255, 255, 225, 0)
     border-radius: 3px
     padding: 0 5px
-  
+    +transition
+  &__input:hover,
   &__input:focus,
   &__input:valid
+    +inputHover
     & + label
       top: 0
+      background: rgba(255, 255, 255, 1)
 
 .toggle_advanced_options
   margin: 25px 0
+
+.btn.submit
+  +transition
+  &:hover,
+  &:focus
+    +inputHover
 
 </style>

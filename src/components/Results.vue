@@ -1,14 +1,21 @@
 <template>
   <section class="results">
-    <p>{{ ideaLeader }}: "{{ app_idea.description }}"</p>
-    <p>Keywords:</p>
-    <ul class="options" v-if="app_idea.options.length">
-      <li class="options__keyword" v-for="(option, i) in app_idea.options" :key="i">
-        {{ option }}   
-      </li>
-    </ul>
-    <h2>{{ result }}</h2>
-    <button @click="reset">{{ resetButton }}</button>
+    <div class="results__meta">
+      <h3>{{ ideaLeader }}: "{{ app_idea.description }}"</h3>
+      <p class="results__keywords" v-if="app_idea.options.length">Keywords:
+        <ul class="options">
+          <li class="options__keyword" v-for="(option, i) in app_idea.options" :key="i">
+            {{ option }}   
+          </li>
+        </ul>
+      </p>
+      <p class="results__message">{{ resultMessage }}</p>
+    </div>
+    <div class="results__reset">
+      <button @click="reset">
+        <span>{{ resetButton }}</span>
+      </button>
+    </div>
   </section>
 </template>
 
@@ -32,7 +39,7 @@ export default {
   methods: {
   },
   computed: {
-    result() {
+    resultMessage() {
       return this.results[randomNum(this.results.length)];
     },
     resetButton() {
@@ -44,22 +51,39 @@ export default {
 
 <style lang="sass" scoped>
 
-@import '../assets/styles/_vars.sass'
-@import '../assets/styles/_mixins.scss'
+  @import '../assets/styles/_vars.sass'
+  @import '../assets/styles/_mixins.scss'
 
-.options
-  padding-left: 0
+  h3
+    font-size: 2rem
 
-.options__keyword
-  display: inline-block
-  list-style-type: none
-  background: $tropical
-  color: #fff
-  font-weight: 700
-  padding: 2px 5px
-  margin-bottom: 10px
+  .results__meta
+    margin-bottom: 10%
 
-.options__keyword + .options__keyword
-  margin-left: 10px
+  .options
+    padding-left: 0
+
+  .options__keyword
+    display: inline-block
+    list-style-type: none
+    background: $tropical
+    color: #fff
+    font-weight: 700
+    padding: 5px
+    border-radius: 3px
+    margin-bottom: 10px
+
+  .options__keyword + .options__keyword
+    margin-left: 10px
+
+  .results__message
+    font-size: 4.5rem
+    +border-gradient($midnight, $tropical, 2px)
+    padding: 4rem 2rem
+    border-radius: 3px
+    font-style: italic
+    @media screen and (max-width: 500px)
+      font-size: 3rem
+      padding: 2rem 1rem            
 
 </style>

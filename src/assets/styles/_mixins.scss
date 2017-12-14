@@ -34,3 +34,33 @@
     }
   }
 }
+
+@mixin font-gradient($from, $to, $dir) {
+  background: -webkit-linear-gradient($dir, $from, $to);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@mixin border-gradient($from, $to, $width) {
+  border-left: $width solid $from;
+  border-right: $width solid $to;
+  background-image:
+    // both needed for top & bottom
+    linear-gradient(left, $from, $to),
+    linear-gradient(left, $from, $to);
+  
+  // 100% left & right, $width px top & bottom
+  background-size: 100% $width;
+  background-position: 0 100%, 0 0;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+}
+
+@mixin transition($prop: all) {
+  outline: none;
+  transition: $prop 0.35s ease;
+}
+
+@mixin inputHover {
+  box-shadow: 0 3px 10px rgba($midgrey, 0.5);
+}

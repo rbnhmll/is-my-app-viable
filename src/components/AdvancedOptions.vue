@@ -8,7 +8,7 @@
         v-bind:key="i"
       >
         <input
-          class="advanced_options__checkbox"
+          class="advanced_options__checkbox visuallyhidden"
           type="checkbox"
           name="options"
           :id="friendly(check)"
@@ -17,7 +17,6 @@
         >
         <label
           class="advanced_options__label"
-          tabindex="0"
           :for="friendly(check)"
         >
           {{check}}
@@ -59,7 +58,7 @@ export default {
   @import '../assets/styles/_mixins.scss'
 
   .advanced_options
-    margin-bottom: 25px
+    margin-bottom: 10%
 
   .advanced_options__inputs
     display: grid
@@ -72,14 +71,20 @@ export default {
     grid-column-end: 5
 
   .advanced_options__checkbox
-    display: none
+    &:focus
+      &+.advanced_options__label
+        +inputHover       
 
   .advanced_options__label
-    border: 2px solid lightgrey
+    +border-gradient($midgrey, $midgrey, 2px)
     display: block
-    padding: 5px
+    padding: 10px  
+    +transition(box-shadow)
+    &:hover,
+    &:focus
+      +inputHover
 
   .advanced_options__checkbox:checked + .advanced_options__label
-    border: 2px solid $tropical
+    +border-gradient($midnight, $tropical, 2px)
 
 </style>
