@@ -26,10 +26,18 @@ export default {
   },
   methods: {
     setMessage() {
-      this.response.push(this.data_messages[randomNum(this.data_messages.length)]);
+      let prevIndex;
+      let currentIndex = randomNum(this.data_messages.length);
+      this.response.push(this.data_messages[currentIndex]);
+      prevIndex = currentIndex;
       interval = setInterval(() => {
-        this.response.push(this.data_messages[randomNum(this.data_messages.length)]);
-        this.updateScroll();
+        currentIndex = randomNum(this.data_messages.length);
+        if (currentIndex !== prevIndex) {
+          this.response.push(this.data_messages[currentIndex]);
+          this.updateScroll();
+        } else {
+          console.log('oops, attempted duplicate!');
+        }
       }, 300);
     },
     updateScroll() {   
