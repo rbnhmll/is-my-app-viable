@@ -1,7 +1,9 @@
 <template>
   <form @submit.prevent="submitForm">
-    <label for="app_idea">App idea</label>
-    <input class="app_idea" type="text" name="description" id="app_idea" @change="handleChange" required>
+    <div class="input_group app_idea">
+      <input class="app_idea__input" type="text" name="description" id="app_idea" @change="handleChange" required>
+      <label for="app_idea" class="app_idea__label">App idea</label>
+    </div>
     
     <div class="input_group toggle_advanced_options">
       <label for="advanced_options">Show Advanced Options</label>
@@ -57,16 +59,35 @@ export default {
 }
 </script>
 
-<style scoped>
-.app_idea {
-  font-size: 30px;
-  display: block;
-  width: 100%;
-  padding: 5px 15px;
-}
+<style lang="sass" scoped>
 
-.toggle_advanced_options {
-  margin: 25px 0;
-}
+@import '../assets/styles/_vars.sass'
+@import '../assets/styles/_mixins.scss'
+
+.app_idea
+  position: relative
+  &__input
+    font-size: 30px
+    display: block
+    width: 100%
+    padding: 5px 15px
+  &__label
+    color: $midgrey
+    position: absolute
+    left: 2rem
+    top: 50%
+    transition: all 0.35s ease
+    transform: translateY(-50%)
+    background: #fff
+    border-radius: 3px
+    padding: 0 5px
+  
+  &__input:focus,
+  &__input:valid
+    & + label
+      top: 0
+
+.toggle_advanced_options
+  margin: 25px 0
 
 </style>

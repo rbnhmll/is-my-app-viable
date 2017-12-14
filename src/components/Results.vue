@@ -1,6 +1,6 @@
 <template>
   <section class="results">
-    <p>Big idea: "{{ app_idea.description }}"</p>
+    <p>{{ ideaLeader }}: "{{ app_idea.description }}"</p>
     <p>Keywords:</p>
     <ul class="options" v-if="app_idea.options.length">
       <li class="options__keyword" v-for="(option, i) in app_idea.options" :key="i">
@@ -25,7 +25,8 @@ export default {
   data () {
     return {
       results,
-      reset_message
+      reset_message,
+      ideaLeader: "Your Big Idea"
     }
   },
   methods: {
@@ -41,17 +42,24 @@ export default {
 }
 </script>
 
-<style scoped>
-.options {
-  padding-left: 0;
-}
-.options__keyword {
-  display: inline-block;
-  list-style-type: none;
-  background: #bada55;
-  padding: 2px 5px;
-}
-.options__keyword + .options__keyword {
-  margin-left: 5px;
-}
+<style lang="sass" scoped>
+
+@import '../assets/styles/_vars.sass'
+@import '../assets/styles/_mixins.scss'
+
+.options
+  padding-left: 0
+
+.options__keyword
+  display: inline-block
+  list-style-type: none
+  background: $tropical
+  color: #fff
+  font-weight: 700
+  padding: 2px 5px
+  margin-bottom: 10px
+
+.options__keyword + .options__keyword
+  margin-left: 10px
+
 </style>

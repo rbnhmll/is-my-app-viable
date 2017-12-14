@@ -53,35 +53,33 @@ export default {
 }
 </script>
 
-<style scoped>
-.advanced_options {
-  margin-bottom: 25px;
-}
+<style lang="sass" scoped>
 
-.advanced_options__inputs {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-}
+  @import '../assets/styles/_vars.sass'
+  @import '../assets/styles/_mixins.scss'
 
-.advanced_options__inputs h2 {
-  grid-column-start: 1;
-  grid-column-end: 5;
-}
+  .advanced_options
+    margin-bottom: 25px
 
-.advanced_options__checkbox {
-  display: none;
-}
+  .advanced_options__inputs
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    grid-column-gap: 10px
+    grid-row-gap: 10px
 
-.advanced_options__label {
-  border: 2px solid lightgrey;
-  display: block;
-  padding: 5px;
-}
+  .advanced_options__inputs h2
+    grid-column-start: 1
+    grid-column-end: 5
 
-.advanced_options__checkbox:checked + .advanced_options__label {
-  border: 2px solid #bada55;
-}
+  .advanced_options__checkbox
+    display: none
+
+  .advanced_options__label
+    border: 2px solid lightgrey
+    display: block
+    padding: 5px
+
+  .advanced_options__checkbox:checked + .advanced_options__label
+    border: 2px solid $tropical
 
 </style>

@@ -1,3 +1,5 @@
+@import './_vars.sass';
+
 @mixin gradient-text($gradient, $bg : 'light') {
   @supports(mix-blend-mode: lighten) {
     display: inline-block;

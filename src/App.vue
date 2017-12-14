@@ -73,40 +73,49 @@ export default {
 }
 </script>
 
-<style>
-@import './assets/styles/setup.scss';
-@import url('https://fonts.googleapis.com/css?family=Coda:800|Lato:300,400,700|Inconsolata');
+<style lang="sass">
 
-html {
-  font-size: 62.5%;
-}
+  @import './assets/styles/setup.scss'
+  @import './assets/styles/_vars.sass'
+  @import url('https://fonts.googleapis.com/css?family=Coda:800|Lato:300,400,700|Inconsolata')
 
-body {
-  font-size: 1.6rem;
-  font-family: 'Lato', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  html
+    font-size: 62.5%
 
-#app {
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body
+    min-height: 100vh
+    font-size: 1.6rem
+    font-family: 'Lato', sans-serif
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    background: linear-gradient($tropical, $midnight)
+    display: flex
+    color: $premidnight
 
-.wrapper {
-  max-width: 800px;
-  width: 95%;
-  margin: 0 auto;
-  /* padding: 0 5%; */
-}
+  #app
+    text-align: center
 
-button,
-input[type="submit"] {
-  cursor: pointer;
-  padding: 10px 20px;
-  background: yellow;
-  display: inline-block;
-  border: 1px solid grey;
-}
+  h1,h2,h3,h4
+    text-transform: uppercase
+
+  h2,h3,h4
+      margin: 0
+      letter-spacing: 5px
+      font-weight: 700
+
+  .wrapper
+    max-width: 1000px
+    width: 100%
+    margin: 0 auto
+    background: #fff
+    padding: 5%
+
+  button,
+  input[type="submit"]
+    cursor: pointer
+    padding: 10px 20px
+    background: yellow
+    display: inline-block
+    border: 1px solid $midgrey
+
 </style>

@@ -13,7 +13,7 @@ export default {
   data () {
     return {
       appName: "Shart Tank",
-      subText: "Is my App viable?"
+      subText: "Is my app idea viable?"
     }
   },
   methods: {
@@ -23,16 +23,26 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+
+  @import '../assets/styles/_vars.sass'
   @import '../assets/styles/_mixins.scss'
   
+  header
+    margin-bottom: 10%
+
   h1
     font-family: 'Coda', cursive
-    text-transform: uppercase
     font-size: 10rem
-    +gradient-text('linear-gradient(to right,#031931, #19ADC2, #AED9D1, #19ADC2, #031931)', 'light')
+    letter-spacing: -3px
+    +gradient-text('linear-gradient(to right, #031931, #19ADC2, #AED9D1, #19ADC2, #031931)', 'light')
+    text-shadow: 0px 5px 10px rgba(0,0,0,0.75)
     margin: 0
     line-height: 1
+
   h2
     margin: 0
+    font-size: 2rem
+    letter-spacing: 5px
+    font-weight: 700
 
 </style>

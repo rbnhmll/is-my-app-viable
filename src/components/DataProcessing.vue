@@ -60,32 +60,33 @@ export default {
 }
 </script>
 
-<style scoped>
-.data_processing {
-  font-family: 'Inconsolata', monospace;
-  margin: 0 auto;
-  height: 150px;
-  overflow-y: scroll;
-  position: relative;
-  border: 1px solid lightgrey;
-  padding: 20px;
-}
+<style lang="sass" scoped>
 
-.data_processing__calc {
-  position: absolute;
-  right: 10px;
-  top: -10px;
-}
+@import '../assets/styles/_vars.sass'
+@import '../assets/styles/_mixins.scss'
 
-.data_processing__window {
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  bottom: 0;
-  text-align: left;
-}
+.data_processing
+  font-family: 'Inconsolata', monospace
+  margin: 0 auto
+  height: 150px
+  overflow-y: scroll
+  position: relative
+  border: 1px solid $midgrey
+  padding: 20px
 
-.data_processing li {
-  list-style: none;
-}
+.data_processing__calc
+  position: absolute
+  right: 10px
+  top: -10px
+
+.data_processing__window
+  padding: 0
+  margin: 0
+  position: absolute
+  bottom: 0
+  text-align: left
+
+.data_processing li
+  list-style: none
+
 </style>
