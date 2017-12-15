@@ -83,6 +83,7 @@ export default {
     +border-gradient($midnight, $tropical, 2px)
 
   &__label
+    font-size: 2.5rem
     color: $midgrey
     position: absolute
     left: 2rem
@@ -99,6 +100,7 @@ export default {
     & + label
       top: 0
       background: rgba(255, 255, 255, 1)
+      font-size: 1.6rem
 
 .toggle_advanced_options
   margin: 25px 0

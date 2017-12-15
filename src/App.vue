@@ -115,6 +115,7 @@ export default {
     margin: 0 auto
     background: #fff
     padding: 5%
+    border-radius: 3px
   
   .visuallyhidden
     position: absolute
