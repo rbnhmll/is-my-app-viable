@@ -62,13 +62,12 @@ export default {
 
   .advanced_options__inputs
     display: grid
-    grid-template-columns: 1fr 1fr 1fr 1fr
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-column-gap: 10px
     grid-row-gap: 10px
 
   .advanced_options__inputs h2
-    grid-column-start: 1
-    grid-column-end: 5
+    grid-column: 1 / -1        
 
   .advanced_options__checkbox
     &:focus
