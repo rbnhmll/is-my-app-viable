@@ -46,8 +46,8 @@
   border-right: $width solid $to;
   background-image:
     // both needed for top & bottom
-    linear-gradient(left, $from, $to),
-    linear-gradient(left, $from, $to);
+    -webkit-linear-gradient(left, $from, $to),
+    -webkit-linear-gradient(left, $from, $to);
   
   // 100% left & right, $width px top & bottom
   background-size: 100% $width;
