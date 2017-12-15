@@ -77,13 +77,16 @@ export default {
     margin-left: 10px
 
   .results__message
-    font-size: 4.5rem
+    font-size: 4rem
     +border-gradient($midnight, $tropical, 2px)
     padding: 4rem 2rem
     border-radius: 3px
     font-style: italic
     @media screen and (max-width: 500px)
       font-size: 3rem
-      padding: 2rem 1rem            
+      padding: 2rem 1rem
+    @media screen and (max-width: 400px)
+      font-size: 2.5rem
+      padding: 1.5rem 1rem
 
 </style>

@@ -144,7 +144,9 @@ export default {
     +transition
     +border-gradient($btnGradStart, $btnGradEnd, 2px)
     @media screen and (max-width: 500px)
-      padding: 10px 20px      
+      padding: 10px 20px
+    @media screen and (max-width: 400px)
+      padding: 10px 15px        
     &:hover
       +inputHover
     span
