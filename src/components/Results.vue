@@ -24,29 +24,24 @@ import { randomNum } from '../helpers';
 import { results, reset_message } from '../list_data';
 export default {
   name: 'Results',
-  props: [
-    "reset",
-    "app_idea",
-    "resetAppIdea"
-  ],
-  data () {
+  props: ['reset', 'app_idea', 'resetAppIdea'],
+  data() {
     return {
       results,
       reset_message,
-      ideaLeader: "Your Big Idea"
-    }
+      ideaLeader: 'Your Big Idea',
+    };
   },
-  methods: {
-  },
+  methods: {},
   computed: {
     resultMessage() {
       return this.results[randomNum(this.results.length)];
     },
     resetButton() {
       return this.reset_message[randomNum(this.reset_message.length)];
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -55,7 +50,7 @@ export default {
   @import '../assets/styles/_mixins.scss'
 
   h3
-    font-size: 2rem
+    font-size: 2rem 
 
   .results__meta
     margin-bottom: 10%
