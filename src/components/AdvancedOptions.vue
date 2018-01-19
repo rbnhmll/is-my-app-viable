@@ -27,29 +27,27 @@
 </template>
 
 <script>
-import friendly_url from "friendly-url";
-import { checkboxes } from "../list_data";
+import friendly_url from 'friendly-url';
+import { checkboxes } from '../list_data';
 
 export default {
   name: 'AdvancedOptions',
-  props: [
-    "handleChange"
-  ],
-  data () {
+  props: ['handleChange'],
+  data() {
     return {
       checkboxes,
-      selected_options: []
-    }
+      selected_options: [],
+    };
   },
   methods: {
-    friendly: friendly_url
+    friendly: friendly_url,
   },
   watch: {
     selected_options() {
       this.handleChange(this.selected_options);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -62,12 +60,13 @@ export default {
 
   .advanced_options__inputs
     display: grid
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-column-gap: 10px
     grid-row-gap: 10px
 
-  .advanced_options__inputs h2
-    grid-column: 1 / -1        
+  .advanced_options__inputs
+    h2
+      grid-column: 1 / -1        
 
   .advanced_options__checkbox
     &:focus
@@ -82,6 +81,7 @@ export default {
     &:hover,
     &:focus
       +inputHover
+      cursor: pointer
 
   .advanced_options__checkbox:checked + .advanced_options__label
     +border-gradient($midnight, $tropical, 2px)

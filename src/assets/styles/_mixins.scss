@@ -1,16 +1,19 @@
 @import './_vars.sass';
 
 @mixin gradient-text($gradient, $bg : 'light') {
-  @supports(mix-blend-mode: lighten) {
+  @supports (mix-blend-mode: lighten) {
     display: inline-block;
     position: relative;
-    
+
     &::before {
       content: '';
       display: block;
       position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
       background: unquote($gradient);
       pointer-events: none;
     }
@@ -37,18 +40,15 @@
 
 @mixin font-gradient($from, $to, $dir) {
   background: -webkit-linear-gradient($dir, $from, $to);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @mixin border-gradient($from, $to, $width) {
   border-left: $width solid $from;
   border-right: $width solid $to;
-  background-image:
-    // both needed for top & bottom
-    -webkit-linear-gradient(left, $from, $to),
-    -webkit-linear-gradient(left, $from, $to);
-  
+  background-image: -webkit-linear-gradient(left, $from, $to), -webkit-linear-gradient(left, $from, $to);
+
   // 100% left & right, $width px top & bottom
   background-size: 100% $width;
   background-position: 0 100%, 0 0;
