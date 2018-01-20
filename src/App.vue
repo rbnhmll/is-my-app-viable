@@ -23,7 +23,7 @@
 
 <script>
 import firebase from './firebase';
-import Banner from "./components/Banner";
+import Banner from './components/Banner';
 import IdeaForm from './components/IdeaForm';
 import DataProcessing from './components/DataProcessing';
 import Results from './components/Results';
@@ -34,17 +34,17 @@ export default {
     Banner,
     IdeaForm,
     DataProcessing,
-    Results
+    Results,
   },
   data() {
     return {
       show_advanced: false,
       stage: 1,
       app_idea: {
-        description: "",
-        options: []
-      }
-    }
+        description: '',
+        options: [],
+      },
+    };
   },
   methods: {
     advanceStage() {
@@ -59,7 +59,7 @@ export default {
       if (e.target) {
         this.app_idea[e.target.name] = e.target.value;
       } else {
-        this.app_idea.options = e;        
+        this.app_idea.options = e;
       }
     },
     handleClick(e) {
@@ -68,9 +68,9 @@ export default {
     handleSubmit(e) {
       const itemsRef = firebase.database().ref('ideas');
       itemsRef.push(this.app_idea);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="sass">
@@ -114,7 +114,7 @@ export default {
     width: 100%
     margin: 0 auto
     background: #fff
-    padding: 5%
+    padding: 50px 5%
     border-radius: 3px
   
   .visuallyhidden
@@ -152,5 +152,15 @@ export default {
     span
       +font-gradient($btnGradStart, $btnGradEnd, left)
 
+  .reveal-enter-active,
+  .reveal-leave-active
+    transition: all 0.25s ease-out
+    max-height: 1000px
+
+  .reveal-enter,
+  .reveal-leave-to
+    opacity: 0
+    transform: scale(0.75)
+    max-height: 0
 
 </style>

@@ -15,12 +15,12 @@
         :checked="show_advanced"
       >
     </div>
-
-    <AdvancedOptions
-      v-show="show_advanced"
-      :handleChange="handleChange"
-    />
-
+    <transition name="reveal">
+      <AdvancedOptions
+        v-show="show_advanced"
+        :handleChange="handleChange"
+      />
+    </transition>
     <div class="input_group">
       <button class="btn submit" role="submit">
         <span>Evaluate</span>
@@ -30,38 +30,30 @@
 </template>
 
 <script>
-import friendly from "friendly-url";
-import AdvancedOptions from "./AdvancedOptions"
+import friendly from 'friendly-url';
+import AdvancedOptions from './AdvancedOptions';
 
 export default {
   name: 'IdeaForm',
   components: {
-    AdvancedOptions
+    AdvancedOptions,
   },
-  props: [
-    "advanceStage",
-    "handleChange",
-    "show_advanced",
-    "handleClick",
-    "handleSubmit"
-  ],
-  data () {
+  props: ['advanceStage', 'handleChange', 'show_advanced', 'handleClick', 'handleSubmit'],
+  data() {
     return {
-      checkboxes: [
-        "VC approved"
-      ]
-    }
+      checkboxes: ['VC approved'],
+    };
   },
   methods: {
     submitForm(e) {
       this.handleSubmit();
       this.advanceStage();
-    }
+    },
   },
   mounted() {
-    document.querySelector(".app_idea__input").focus();
-  }
-}
+    document.querySelector('.app_idea__input').focus();
+  },
+};
 </script>
 
 <style lang="sass" scoped>
