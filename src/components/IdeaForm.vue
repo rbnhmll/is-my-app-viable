@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="submitForm">
     <div class="input_group app_idea">
-      <input class="app_idea__input" type="text" name="description" id="app_idea" @change="handleChange" required autofocus>
+      <input class="app_idea__input" type="text" name="description" id="app_idea" @change="handleChange" autocomplete="off" required autofocus>
       <label for="app_idea" class="app_idea__label">App idea</label>
     </div>
     
@@ -40,9 +40,7 @@ export default {
   },
   props: ['advanceStage', 'handleChange', 'show_advanced', 'handleClick', 'handleSubmit'],
   data() {
-    return {
-      checkboxes: ['VC approved'],
-    };
+    return {};
   },
   methods: {
     submitForm(e) {
