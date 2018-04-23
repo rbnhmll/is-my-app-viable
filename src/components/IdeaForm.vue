@@ -1,18 +1,28 @@
 <template>
   <form @submit.prevent="submitForm">
     <div class="input_group app_idea">
-      <input class="app_idea__input" type="text" name="description" id="app_idea" @change="handleChange" autocomplete="off" required autofocus>
+      <input
+        @change="handleChange"
+        autocomplete="off"
+        autofocus
+        class="app_idea__input"
+        id="app_idea"
+        name="description"
+        ref="app_idea__input"
+        required
+        type="text"
+      >
       <label for="app_idea" class="app_idea__label">App idea</label>
     </div>
     
     <div class="input_group toggle_advanced_options">
       <label for="advanced_options">Show Advanced Options</label>
       <input
-        type="checkbox"
-        name="advanced_options"
-        id="advanced_options"
-        @click="handleClick"
         :checked="show_advanced"
+        @click="handleClick"
+        id="advanced_options"
+        name="advanced_options"
+        type="checkbox"
       >
     </div>
     <transition name="reveal">
@@ -49,7 +59,7 @@ export default {
     },
   },
   mounted() {
-    document.querySelector('.app_idea__input').focus();
+    this.$refs.app_idea__input.focus();
   },
 };
 </script>

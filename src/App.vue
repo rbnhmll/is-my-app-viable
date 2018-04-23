@@ -2,27 +2,28 @@
   <div id="app">
     <Banner :reset="this.reset" />
     <IdeaForm
-      v-if="this.stage === 1"
       :advanceStage="advanceStage"
       :handleChange="handleChange"
-      :show_advanced="show_advanced"
       :handleClick="handleClick"
       :handleSubmit="handleSubmit"
+      :show_advanced="show_advanced"
+      v-if="this.stage === 1"
     />
     <DataProcessing
-      v-if="this.stage === 2"
       :advanceStage="advanceStage"
+      v-if="this.stage === 2"
     />
     <Results
-      v-if="this.stage === 3"
-      :reset="reset"
       :app_idea="app_idea"
+      :reset="reset"
+      v-if="this.stage === 3"
     />
   </div>
 </template>
 
 <script>
 import firebase from './firebase';
+
 import Banner from './components/Banner';
 import IdeaForm from './components/IdeaForm';
 import DataProcessing from './components/DataProcessing';

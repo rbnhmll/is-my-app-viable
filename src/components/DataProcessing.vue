@@ -1,10 +1,14 @@
 <template>
   <section class="data_processing">
     <p class="data_processing__calc"><i class="fa fa-spinner fa-pulse fa-fw" aria-hidden="true"></i>
-    Calculating ...</p>
-    <ul class="data_processing__window">
-      <li v-for="(r, i) in response" :key="i"><span class="data_processing__prompt">></span> {{ r }}</li>
-      <li class="data_processing__prompt data_processing__prompt--caret">><span class="data_processing__caret">|</span></li>
+    {{ calculating_message }}</p>
+    <ul ref="data_processing__window" class="data_processing__window">
+      <li v-for="(r, i) in response" :key="i">
+        <span class="data_processing__prompt">></span> {{ r }}
+      </li>
+      <li class="data_processing__prompt data_processing__prompt--caret">
+        ><span class="data_processing__caret">|</span>
+      </li>
     </ul>
   </section>
 </template>
@@ -16,14 +20,13 @@ let interval;
 
 export default {
   name: 'DataProcessing',
-  props: [
-    "advanceStage"
-  ],
-  data () {
+  props: ['advanceStage'],
+  data() {
     return {
+      calculating_message: 'Calculating ...',
+      data_messages,
       response: [],
-      data_messages
-    }
+    };
   },
   methods: {
     setMessage() {
@@ -41,13 +44,13 @@ export default {
         }
       }, 300);
     },
-    updateScroll() {   
-      var element = document.querySelector(".data_processing__window");
+    updateScroll() {
+      var element = this.$refs.data_processing__window;
       var isScrolledToBottom = element.scrollHeight - element.clientHeight <= element.scrollTop + 1;
-      if(isScrolledToBottom) {
+      if (isScrolledToBottom) {
         element.scrollTop = element.scrollHeight - element.clientHeight;
       }
-    }
+    },
   },
   mounted() {
     setTimeout(() => {
@@ -57,8 +60,8 @@ export default {
   },
   beforeDestroy() {
     clearInterval(interval);
-  }
-}
+  },
+};
 </script>
 
 <style lang="sass" scoped>

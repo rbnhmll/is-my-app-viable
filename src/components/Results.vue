@@ -1,10 +1,14 @@
 <template>
   <section class="results">
     <div class="results__meta">
-      <h3>{{ ideaLeader }}: "{{ app_idea.description }}"</h3>
+      <h3>{{ idea_leader }}: "{{ app_idea.description }}"</h3>
       <p class="results__keywords" v-if="app_idea.options.length">Keywords:
         <ul class="options">
-          <li class="options__keyword" v-for="(option, i) in app_idea.options" :key="i">
+          <li
+            class="options__keyword"
+            v-for="(option, i) in app_idea.options"
+            :key="i"
+          >
             {{ option }}   
           </li>
         </ul>
@@ -22,6 +26,7 @@
 <script>
 import { randomNum } from '../helpers';
 import { results, reset_message } from '../list_data';
+
 export default {
   name: 'Results',
   props: ['reset', 'app_idea', 'resetAppIdea'],
@@ -29,10 +34,9 @@ export default {
     return {
       results,
       reset_message,
-      ideaLeader: 'Your Big Idea',
+      idea_leader: 'Your Big Idea',
     };
   },
-  methods: {},
   computed: {
     resultMessage() {
       return this.results[randomNum(this.results.length)];

@@ -6,23 +6,18 @@
 </template>
 
 <script>
-import friendly from "friendly-url";
+import friendly from 'friendly-url';
 
 export default {
   name: 'Banner',
-  data () {
+  data() {
     return {
-      appName: "Shart Tank",
-      subText: "Is my app idea viable?"
-    }
+      appName: 'Shart Tank',
+      subText: 'Is my app idea viable?',
+    };
   },
-  props: [
-    "reset"
-  ],
-  methods: {
-    
-  }
-}
+  props: ['reset'],
+};
 </script>
 
 <style lang="sass" scoped>

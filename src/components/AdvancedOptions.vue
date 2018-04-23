@@ -2,26 +2,20 @@
   <section class="advanced_options">
     <div class="advanced_options__inputs">
       <h2>Check all that apply</h2>
-      <span
-        class="input_group"
-        v-for="(check, i) in checkboxes"
-        v-bind:key="i"
-      >
+      <template v-for="(check, i) in checkboxes">
         <input
-          class="advanced_options__checkbox visuallyhidden"
-          type="checkbox"
-          name="options"
           :id="friendly(check)"
+          :key="i"
           :value="check"
+          class="advanced_options__checkbox visuallyhidden"
+          name="options"
+          type="checkbox"
           v-model="selected_options"
         >
-        <label
-          class="advanced_options__label"
-          :for="friendly(check)"
-        >
+        <label class="advanced_options__label" :for="friendly(check)" :key="i">
           {{check}}
         </label>
-      </span>
+      </template>
     </div>
   </section>
 </template>
