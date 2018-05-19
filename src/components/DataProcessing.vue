@@ -20,7 +20,6 @@ let interval;
 
 export default {
   name: 'DataProcessing',
-  props: ['advanceStage'],
   data() {
     return {
       calculating_message: 'Calculating ...',
@@ -54,7 +53,8 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      this.advanceStage();
+      // this.advanceStage();
+      this.$emit('advanceStage');
     }, 5000);
     this.setMessage();
   },

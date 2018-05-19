@@ -2,7 +2,7 @@
   <form @submit.prevent="submitForm">
     <div class="input_group app_idea">
       <input
-        @change="handleChange"
+        @change="$emit('handleChange', $event)"
         autocomplete="off"
         autofocus
         class="app_idea__input"
@@ -18,8 +18,8 @@
     <div class="input_group toggle_advanced_options">
       <label for="advanced_options">Show Advanced Options</label>
       <input
+        @click="$emit('handleClick', $event)"
         :checked="show_advanced"
-        @click="handleClick"
         id="advanced_options"
         name="advanced_options"
         type="checkbox"
@@ -28,7 +28,7 @@
     <transition name="reveal">
       <AdvancedOptions
         v-show="show_advanced"
-        :handleChange="handleChange"
+        @handleChange="$emit('handleChange', $event)"
       />
     </transition>
     <div class="input_group">
@@ -48,14 +48,14 @@ export default {
   components: {
     AdvancedOptions,
   },
-  props: ['advanceStage', 'handleChange', 'show_advanced', 'handleClick', 'handleSubmit'],
+  props: ['show_advanced'],
   data() {
     return {};
   },
   methods: {
-    submitForm(e) {
-      this.handleSubmit();
-      this.advanceStage();
+    submitForm() {
+      this.$emit('handleSubmit');
+      this.$emit('advanceStage');
     },
   },
   mounted() {

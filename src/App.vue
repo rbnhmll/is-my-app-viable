@@ -2,15 +2,15 @@
   <div id="app">
     <Banner :reset="this.reset" />
     <IdeaForm
-      :advanceStage="advanceStage"
-      :handleChange="handleChange"
-      :handleClick="handleClick"
-      :handleSubmit="handleSubmit"
+      @advanceStage="advanceStage"
+      @handleChange="handleChange($event)"
+      @handleClick="handleClick"
+      @handleSubmit="handleSubmit"
       :show_advanced="show_advanced"
       v-if="this.stage === 1"
     />
     <DataProcessing
-      :advanceStage="advanceStage"
+      @advanceStage="advanceStage"
       v-if="this.stage === 2"
     />
     <Results

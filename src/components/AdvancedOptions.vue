@@ -26,7 +26,6 @@ import { checkboxes } from '../list_data';
 
 export default {
   name: 'AdvancedOptions',
-  props: ['handleChange'],
   data() {
     return {
       checkboxes,
@@ -38,7 +37,7 @@ export default {
   },
   watch: {
     selected_options() {
-      this.handleChange(this.selected_options);
+      this.$emit('handleChange', this.selected_options);
     },
   },
 };
