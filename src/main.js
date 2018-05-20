@@ -3,7 +3,13 @@
 import Vue from 'vue';
 import App from './App';
 
+import friendly_url from 'friendly-url';
+
 Vue.config.productionTip = false;
+
+Vue.filter('friendly', function (value) {
+  return friendly_url(value);
+})
 
 /* eslint-disable no-new */
 new Vue({

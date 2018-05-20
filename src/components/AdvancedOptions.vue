@@ -4,15 +4,15 @@
       <h2>Check all that apply</h2>
       <template v-for="(check, i) in checkboxes">
         <input
-          :id="friendly(check)"
-          :key="i"
+          :id="check | friendly"
+          :key="check | friendly"
           :value="check"
           class="advanced_options__checkbox visuallyhidden"
           name="options"
           type="checkbox"
           v-model="selected_options"
         >
-        <label class="advanced_options__label" :for="friendly(check)" :key="i">
+        <label class="advanced_options__label" :for="check | friendly" :key="i">
           {{check}}
         </label>
       </template>
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import friendly_url from 'friendly-url';
+
 import { checkboxes } from '../list_data';
 
 export default {
@@ -31,9 +31,6 @@ export default {
       checkboxes,
       selected_options: [],
     };
-  },
-  methods: {
-    friendly: friendly_url,
   },
   watch: {
     selected_options() {
