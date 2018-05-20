@@ -16,7 +16,7 @@
       <p class="results__message">{{ resultMessage }}</p>
     </div>
     <div class="results__reset">
-      <button @click="reset">
+      <button @click="$emit('reset')">
         <span>{{ resetButton }}</span>
       </button>
     </div>
@@ -29,7 +29,7 @@ import { results, reset_message } from '../list_data';
 
 export default {
   name: 'Results',
-  props: ['reset', 'app_idea', 'resetAppIdea'],
+  props: ['app_idea', 'resetAppIdea'],
   data() {
     return {
       results,

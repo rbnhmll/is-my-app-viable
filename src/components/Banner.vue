@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <h1 @click="reset">{{ appName }}</h1>
+  <header @click="$emit('reset')">
+    <h1>{{ appName }}</h1>
     <h2>{{ subText }}</h2>
   </header>
 </template>
@@ -16,7 +16,6 @@ export default {
       subText: 'Is my app idea viable?',
     };
   },
-  props: ['reset'],
 };
 </script>
 
@@ -27,6 +26,7 @@ export default {
   
   header
     margin-bottom: 10%
+    cursor: pointer
 
   h1
     font-family: 'Coda', cursive
@@ -36,7 +36,6 @@ export default {
     text-shadow: 0px 5px 10px rgba(0,0,0,0.75)
     margin: 0
     line-height: 1
-    cursor: pointer
     @media screen and (max-width: 500px)
       font-size: 8rem      
 
