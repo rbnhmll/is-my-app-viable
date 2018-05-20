@@ -60,7 +60,11 @@ export default {
     },
     handleSubmit(e) {
       const itemsRef = firebase.database().ref('ideas');
-      itemsRef.push(this.app_idea);
+      if (this.app_idea.description === "#test") {
+        console.log("This is just a #test idea");
+      } else {
+        itemsRef.push(this.app_idea);
+      }
     },
   },
   computed: {
