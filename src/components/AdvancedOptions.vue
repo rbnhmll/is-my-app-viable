@@ -5,7 +5,7 @@
       <template v-for="(check, i) in checkboxes">
         <input
           :id="check | friendly"
-          :key="check | friendly"
+          :key="i"
           :value="check"
           class="advanced_options__checkbox visuallyhidden"
           name="options"
