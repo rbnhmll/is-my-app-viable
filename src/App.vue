@@ -1,22 +1,14 @@
 <template>
-  <div id="app">
-    <Banner :reset="this.reset" />
-    <IdeaForm
-      @advanceStage="advanceStage"
-      @handleChange="handleChange($event)"
-      @handleClick="handleClick"
-      @handleSubmit="handleSubmit"
-      :show_advanced="show_advanced"
-      v-if="this.stage === 1"
-    />
-    <DataProcessing
-      @advanceStage="advanceStage"
-      v-if="this.stage === 2"
-    />
-    <Results
-      :app_idea="app_idea"
-      :reset="reset"
-      v-if="this.stage === 3"
+  <div id="app" class="app">
+    <Banner     @reset="reset" />
+    <component  :is="currentState"
+                @advanceStage="advanceStage"
+                @handleChange="handleChange($event)"
+                @handleClick="handleClick"
+                @handleSubmit="handleSubmit"
+                @reset="reset"
+                :show_advanced="show_advanced"
+                :app_idea="app_idea"
     />
   </div>
 </template>
@@ -49,7 +41,7 @@ export default {
   },
   methods: {
     advanceStage() {
-      this.stage = this.stage + 1;
+      this.stage += 1;
     },
     reset() {
       this.stage = 1;
@@ -71,6 +63,23 @@ export default {
       itemsRef.push(this.app_idea);
     },
   },
+  computed: {
+    currentState() {
+      switch (this.stage) {
+        case 1:
+          return "IdeaForm";
+          break;
+        case 2:
+          return "DataProcessing";
+          break;
+        case 3:
+          return "Results";
+          break;
+        default:
+          return "IdeaForm";
+        }
+    },
+  }
 };
 </script>
 
@@ -99,7 +108,7 @@ export default {
     display: inline-block
     white-space: nowrap
 
-  #app
+  .app
     text-align: center
 
   h1,h2,h3,h4
