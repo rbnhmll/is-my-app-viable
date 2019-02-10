@@ -1,8 +1,9 @@
 {
     "checkboxes": [
         "Scrappy Startup",
-        "Totally new idea!",
+        "Blockchain!",
         "Like Uber but _____",
+        "The Cloud",
         "Disruptive",
         "Growth-hacking",
         "VC Funding",
@@ -10,8 +11,7 @@
         "Scalable",
         "Gamification",
         "Sharing Economy",
-        "Seed Capital",
-        "The Cloud"
+        "Seed Capital"
     ],
     "data_messages": [
         "Alarmed at my own power",
